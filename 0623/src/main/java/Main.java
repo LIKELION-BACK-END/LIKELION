@@ -8,7 +8,6 @@ public class Main {
         myBicycle.color = "green";
         myBicycle.info();
 
-
     }
 }
 
