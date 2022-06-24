@@ -2,25 +2,12 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Grandeur myCar1 = new Grandeur();
-        myCar1.color = "red";
-        myCar1.gear = "auto";
-        myCar1.price = 30000000;
+        Bicycle myBicycle = new Bicycle("red", 100);
+        myBicycle.info();
 
-        myCar1.run();
-        myCar1.stop();
-        myCar1.info();
+        myBicycle.color = "green";
+        myBicycle.info();
 
-        System.out.println();
-
-        Grandeur myCar2 = new Grandeur();
-        myCar2.color = "blue";
-        myCar2.gear = "manual";
-        myCar2.price = 25000000;
-
-        myCar2.run();
-        myCar2.stop();
-        myCar1.info();
 
     }
 }

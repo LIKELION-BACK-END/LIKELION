@@ -1,4 +1,5 @@
 public class Grandeur {
+
     public String color;
     public String gear;
     public int price;
@@ -19,6 +20,9 @@ public class Grandeur {
     public void info() {
         System.out.println("-- info -- ");
         System.out.println("color : " + color);
+        System.out.println("gear : " + gear);
+        System.out.println("price : " + price);
         System.out.println();
     }
+
 }

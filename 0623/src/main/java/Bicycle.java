@@ -4,7 +4,13 @@ public class Bicycle {
     public int price;
 
     public Bicycle() {
-        System.out.println("Bicycle 생성자");
+        System.out.println("Bicycle 생성자 - I ");
+    }
+
+    public Bicycle(String c, int p) {
+        System.out.println("Bicycle 생성자 - II ");
+        this.color = c;
+        this.price = p;
     }
 
     public void info() {
