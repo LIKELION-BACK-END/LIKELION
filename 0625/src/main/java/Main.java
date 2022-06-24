@@ -35,5 +35,6 @@ public class Main {
         obj1 = null;
         obj1.getInfo(); */
 
+
     }
 }

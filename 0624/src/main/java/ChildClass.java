@@ -27,5 +27,4 @@ public class ChildClass {
     private void mySecret() {
         System.out.println("-- mySecret() --");
     }
-
 }

@@ -18,5 +18,4 @@ public class Bicycle {
         System.out.println("color : " + color);
         System.out.println("price : " + price);
     }
-
 }
