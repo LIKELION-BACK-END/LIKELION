@@ -1,40 +1,27 @@
 public class Main {
-
     public static void main(String[] args) {
 
-        Object obj1 = new Object();
-        Object obj2 = new Object();
-        Object obj3 = new Object();
+        // 디폴트 생성자
+        ObjectEx obj1 = new ObjectEx();
 
-        System.out.println("obj1 => " + obj1);
-        System.out.println("obj2 => " + obj2);
-        System.out.println("obj3 => " + obj3);
+        System.out.println();
 
-        if (obj1 == obj2) {
-            System.out.println("obj1 == obj2");
-        } else {
-            System.out.println("obj1 != obj2");
-        }
+        // 사용자 정의 생성자
+        ObjectEx obj2 = new ObjectEx(10);
 
-        if (obj2 == obj3) {
-            System.out.println("obj2 == obj3");
-        } else {
-            System.out.println("obj2 != obj3");
-        }
+        int[] arr = {10, 20, 30};
+        Object obj3 = new ObjectEx("Java", arr);
 
-        if (obj3 == obj1) {
-            System.out.println("obj3 == obj1");
-        } else {
-            System.out.println("obj3 != obj1");
-        }
+        // 소멸자
+        Object obj4;
 
-        System.out.println("obj1 ------> " + obj1);
+        obj4 = new ObjectEx();
+        obj4 = new ObjectEx();
 
-        /* 레퍼런스 X
-        obj1.getInfo();
-        obj1 = null;
-        obj1.getInfo(); */
+        System.gc();
 
-
+        // this 키워드
+        int[] ints = {10, 20, 30};
+        ObjectEx obj5 = new ObjectEx(10, "Java", ints);
     }
 }
