@@ -1,11 +1,19 @@
 import client.Client;
-import client.Object;
 
 public class Main {
     public static void main(String[] args) {
 
-        Client client = new Client();
-        Object object = new Object();
+        Client parkBank = new Client("박영승");
+        parkBank.saveMoney(100);
+
+        Client jungBank = new Client("정승원");
+        jungBank.saveMoney(300);
+
+        jungBank.getBankInfo();
+
+        parkBank.spendMoney(400);
+
+        jungBank.getBankInfo();
 
     }
 }
