@@ -1,14 +1,11 @@
 public class Parent {
+    int openYear = 1995;
 
     public Parent() {
         System.out.println("Parent 생성자");
     }
 
-     public void parentFn() {
-        System.out.println("-- parentFun() START --");
-    }
-
-    private void privateFn() {
-        System.out.println("privateFn()");
+    public void makePizza() {
+        System.out.println("-- makePizza() START --");
     }
 }
