@@ -7,6 +7,5 @@ public class Main {
 
         student1.setScore(100);
         student1.getInfo();
-
     }
 }
