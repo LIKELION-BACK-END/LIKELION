@@ -4,6 +4,5 @@ public class Main {
 
         FirstChild c = new FirstChild();
         c.getOpenYear();
-
     }
 }
