@@ -6,6 +6,7 @@ public class Outer {
     public Outer() {
         System.out.println("Outer 생성자");
     }
+
     class InnerClass {
         int num = 100;
         String str2 = str1;

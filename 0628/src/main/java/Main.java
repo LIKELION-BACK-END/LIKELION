@@ -22,5 +22,13 @@ public class Main {
 
         System.out.println();
 
+        // 익명(anonymous) 클래스
+        new Anonymous() {
+
+            @Override
+            public void method() {
+                System.out.println("-- Anonymous Override method START --");
+            };
+        }.method();
     }
 }
