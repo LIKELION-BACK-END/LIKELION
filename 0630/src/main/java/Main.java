@@ -113,4 +113,5 @@ class LGTv extends 표준Tv {
     void 게임모드전환() {
         System.out.println("LGTv 게임모드전환!");
     }
+
 }
