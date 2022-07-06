@@ -1,63 +1,78 @@
-// 문제 : 구성(전사는 무기로 구성된다.)을 사용하여 중복을 제거해주세요.
+/* 가정
+우리는 게임개발회사에 입사했다.
+우리에게는 성격좋은 사수 한명이 있다.
+내가 개발할 게임은 오리시뮬레이션 게임이다.
+선임이 나의 개발을 도와주진 않지만 조언은 해준다.
+*/
+
+/* 요구사항
+- D8 요구 : 자바에서 다중상속은 불가능 합니다. 상속에는 한계가 있습니다. 상속을 사용하지 않고 고무오리계열의 중복을 제거해주세요.
+*/
 
 class Main {
     public static void main(String[] args) {
-        전사타입A a전사타입A = new 전사타입A();
-        a전사타입A.공격();
+        청둥오리 a청둥오리 = new 청둥오리();
+        a청둥오리.날다();
+        // 출력 : 오리가 날개로 날아갑니다.
 
-        전사타입B a전사타입B = new 전사타입B();
-        a전사타입B.공격();
+        흰오리 a흰오리 = new 흰오리();
+        a흰오리.날다();
+        // 출력 : 오리가 날개로 날아갑니다.
 
-        전사타입C a전사타입C = new 전사타입C();
-        a전사타입C.공격();
+        고무오리 a고무오리 = new 고무오리();
+        a고무오리.날다();
+        // 출력 : 저는 날 수 없어요. ㅜㅠ
 
-        전사타입D a전사타입D = new 전사타입D();
-        a전사타입D.공격();
+        고무2오리 a고무2오리 = new 고무2오리();
+        a고무2오리.날다();
+        // 출력 : 저는 날 수 없어요. ㅜㅠ
     }
 }
 
-abstract class 전사 {
-    무기 a무기;
-    void 공격() {
-        a무기.사용();
+abstract class 오리 {
+    비행아이템 a비행아이템;
+
+    오리() {
+        a비행아이템 = new 날개비행아이템();
+    }
+
+    void 날다() {
+        a비행아이템.작동();
     }
 }
 
-class 전사타입A extends 전사 {
-    전사타입A() {
-        a무기 = new 칼();
-    }
+class 흰오리 extends 오리 {
+
 }
-class 전사타입B extends 전사 {
-    전사타입B() {
-        a무기 = new 칼();
-    }
+
+class 청둥오리 extends 오리 {
+
 }
-class 전사타입C extends 전사 {
-    전사타입C() {
-        a무기 = new 활();
-    }
-}
-class 전사타입D extends 전사 {
-    전사타입D() {
-        a무기 = new 활();
+
+class 고무오리 extends 오리 {
+    고무오리() {
+        a비행아이템 = new 못나는비행아이템();
     }
 }
 
-// abstract => 무기 클래스는 아쉽게도 `new 무기();` 될 일은 없고 리모콘 제작용으로만 쓰인다.
-abstract class 무기 {
-    // abstract => 사용 메서드는 슬프게도 리모콘 버튼용으로만 쓰인다.
-    abstract void 사용();
-}
-
-class 칼 extends 무기 {
-    void 사용() {
-        System.out.println("칼로 공격");
+class 고무2오리 extends 오리 {
+    고무2오리() {
+        a비행아이템 = new 못나는비행아이템();
     }
 }
 
-class 활 extends 무기 {
-    void 사용() {
-        System.out.println("활로 공격");
+abstract class 비행아이템 {
+    abstract void 작동();
+}
+
+class 날개비행아이템 extends 비행아이템 {
+    void 작동() {
+        System.out.println("날개로 날아갑니다.");
+    }
+}
+
+class 못나는비행아이템 extends 비행아이템 {
+    void 작동() {
+        System.out.println("저는 못 날아요 ㅠㅠ");
     }
 }
