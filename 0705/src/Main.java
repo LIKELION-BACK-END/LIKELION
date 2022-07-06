@@ -1,29 +1,34 @@
-public class Main  {
+// 문제 : 아래와 같이 출력 되도록 해주세요.
+// 조건 : 생성자를 단 1개만 사용해주세요.
 
+class Main {
     public static void main(String[] args) {
-        캐릭터 a플레이어_캐릭터;
-        a플레이어_캐릭터 = new 전사();
-        a플레이어_캐릭터.공격();
+        int 엄지손가락_길이 = new 사람().a왼팔.a손.a엄지손가락.길이;
 
-        a플레이어_캐릭터 = new 마법사();
-        a플레이어_캐릭터.공격();
+        System.out.println(엄지손가락_길이 + "cm");
+        // 출력 : 5cm
     }
 }
 
-abstract class 캐릭터 {
-    abstract void 공격();
-}
+class 사람 {
+    팔 a왼팔;
 
-class 전사 extends 캐릭터 {
-    @Override
-    void 공격() {
-        System.out.println("전사가 대검으로 공격합니다.");
+    사람() {
+        a왼팔 = new 팔();
+        a왼팔.a손 = new 손();
+        a왼팔.a손.a엄지손가락 = new 손가락();
+        a왼팔.a손.a엄지손가락.길이 = 5;
     }
 }
 
-class 마법사 extends 캐릭터 {
-    @Override
-    void 공격() {
-        System.out.println("마법사가 파이어볼로 공격합니다.");
-    }
+class 팔 {
+    손 a손;
+}
+
+class 손 {
+    손가락 a엄지손가락;
+}
+
+class 손가락 {
+    int 길이;
 }
