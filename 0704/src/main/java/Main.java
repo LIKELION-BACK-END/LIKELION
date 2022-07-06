@@ -1,6 +1,7 @@
 // 힌트 : if ( a무기 == null ) { ... }
 
 class Main {
+
     public static void main(String[] args) {
         전사 a전사 = new 전사();
         a전사.공격();
