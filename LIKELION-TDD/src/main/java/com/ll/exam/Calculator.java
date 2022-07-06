@@ -1,6 +1,7 @@
 package com.ll.exam;
 
 public class Calculator {
+
     public static int calc(String s) {
         boolean isMulti = s.indexOf(" * ") != -1;
         boolean isMinus = s.indexOf(" - ") != -1;
