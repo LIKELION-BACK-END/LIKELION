@@ -1,6 +1,7 @@
 // 문제 : 아래가 실행되도록 해주세요.
 
 class Main {
+
     public static void main(String[] args) {
         전사 a전사 = new 전사();
 
