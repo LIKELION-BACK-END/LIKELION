@@ -1,2 +1,2 @@
-# 🦁LIKELION
+# LIKELION
 멋쟁이사자처럼 BACK-END SCHOOL 1기
