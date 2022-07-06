@@ -2,6 +2,7 @@
 // 조건 : 생성자를 단 1개만 사용해주세요.
 
 class Main {
+
     public static void main(String[] args) {
         int 엄지손가락_길이 = new 사람().a왼팔.a손.a엄지손가락.길이;
 
