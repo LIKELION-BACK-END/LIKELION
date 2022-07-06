@@ -1,75 +1,69 @@
-public class Main {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+class Main {
+    // static 메서드들에서 참조되는 변수는 무조건 static 키워드를 달아야 한다.
+    static String line = "Test 15 lqlq 35 bad 99999 guess 34";
 
     public static void main(String[] args) {
-
-        청둥오리 a청둥오리 = new 청둥오리();
-        a청둥오리.날다();
-
-        흰오리 a흰오리 = new 흰오리();
-        a흰오리.날다();
-
-        고무오리 a고무오리 = new 고무오리();
-        a고무오리.날다();
-
-        고무2오리 a고무2오리 = new 고무2오리();
-        a고무2오리.날다();
-
-        a고무2오리.a비행아이템 = new 로켓비행아이템();
-        a고무2오리.날다();
-    }
-}
-
-abstract class 오리 {
-
-    비행아이템 a비행아이템;
-
-    오리() {
-        a비행아이템 = new 날개비행아이템();
+        sol1();
+        sol2();
+        sol3();
     }
 
-    void 날다() {
-        a비행아이템.작동();
+    private static void sol3() {
+        String[] sBits = line.split(" ");
+        List<Integer> numbers = new ArrayList<>();
+
+        for ( String bit : sBits ) {
+            if ( bit.matches("\\d+") ) {
+                numbers.add(Integer.parseInt(bit));
+            }
+        }
+
+        int sum = 0;
+
+        /*
+        for ( int i = 0; i < numbers.size(); i++ ) {
+            sum += numbers.get(i);
+        }
+        */
+
+        for ( int number : numbers ) {
+            sum += number;
+        }
+
+        System.out.println(sum);
     }
-}
 
-class 흰오리 extends 오리 {
+    private static void sol2() {
+        String[] sBits = line.split(" ");
+        int[] numbers = new int[sBits.length];
+        int numbersLastIndex = -1;
 
-}
+        for ( String bit : sBits ) {
+            if ( bit.matches("\\d+") ) {
+                numbers[++numbersLastIndex] = Integer.parseInt(bit);
+            }
+        }
 
-class 청둥오리 extends 오리 {
+        int sum = 0;
 
-}
+        for ( int i = 0; i <= numbersLastIndex; i++ ) {
+            sum += numbers[i];
+        }
 
-class 고무오리 extends 오리 {
-    고무오리() {
-        a비행아이템 = new 못나는비행아이템();
+        System.out.println(sum);
     }
-}
 
-class 고무2오리 extends 오리 {
-    고무2오리() {
-        a비행아이템 = new 못나는비행아이템();
-    }
-}
+    private static void sol1() {
+        int sum = Arrays
+                .stream(line.split(" "))
+                .filter((s) -> s.matches("\\d+"))
+                .mapToInt(Integer::parseInt)
+                .sum();
 
-abstract class 비행아이템 {
-    abstract void 작동();
-}
-
-class 날개비행아이템 extends 비행아이템 {
-    void 작동() {
-        System.out.println("남 ㅅㄱ");
-    }
-}
-
-class 못나는비행아이템 extends 비행아이템 {
-    void 작동() {
-        System.out.println("못남 ㅜ");
-    }
-}
-
-class 로켓비행아이템 extends 비행아이템 {
-    void 작동() {
-        System.out.println("로켓파워로 날아갑니다");
+        System.out.println(sum);
     }
 }
