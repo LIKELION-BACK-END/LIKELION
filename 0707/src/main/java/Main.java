@@ -10,12 +10,12 @@ class Main {
     }
 }
 
-abstract class 동물 {
+class 동물 {
     동물() {
         init();
     }
 
-    abstract void init();
+    void init() {}
 }
 
 class 사람 extends 동물 {
