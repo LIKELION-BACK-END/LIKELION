@@ -1,30 +1,31 @@
-// 문제 : 아래와 같이 출력되도록 해보세요.
+// 문제 : 아래가 실행되도록 해주세요.
 
 class Main {
     public static void main(String[] args) {
-        계산기 a계산기 = new 계산기();
-
-        System.out.println(a계산기.더하기(10, 20));
-        // 출력 : 30
-
-        System.out.println(a계산기.더하기(10, 20, 30));
-        // 출력 : 60
-
-        System.out.println(a계산기.더하기(10.5, 20, 30));
-        // 출력 : 60.5
+        new 사과();
+        new 포도();
+        new 사람("홍길동");
+        new 사람();
     }
 }
 
-class 계산기 {
-    int 더하기(int a, int b) {
-        return a + b;
+class 사과 {
+    // 이렇게 생성자를 만들지 않은 클래스는 자바에서 자동으로 생성자를 하나 만들어준다.
+    // 참고로 자동으로 만들어 질 때 `매개변수 없는 생성자`가 만들어집니다.
+}
+
+class 포도 {
+    포도() {
+        // 이렇게 생성자를 직접 만들면 자바는 더 이상 자동으로 생성자를 만들어주지 않습니다.
+    }
+}
+
+class 사람 {
+    사람() {
+
     }
 
-    int 더하기(int a, int b, int c) {
-        return a + b + c;
-    }
-
-    double 더하기(double a, int b, int c) {
-        return a + b + c;
+    사람(String name) {
+        System.out.println("저의 이름은 " + name + " 입니다.");
     }
 }
