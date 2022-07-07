@@ -1,28 +1,30 @@
-// 문제 : 아래와 같이 출력되도록 해보세요.[정답]
+// 문제 : 아래와 같이 출력되도록 해보세요.
 
 class Main {
     public static void main(String[] args) {
-        new 사람();
-        // 출력 : 사람이 태어났습니다.
+        계산기 a계산기 = new 계산기();
 
-        new 사람(10);
-        // 출력 : 태어나서부터 10살인 사람이 태어났습니다.
+        System.out.println(a계산기.더하기(10, 20));
+        // 출력 : 30
 
-        new 사람(20);
-        // 출력 : 태어나서부터 20살인 사람이 태어났습니다.
+        System.out.println(a계산기.더하기(10, 20, 30));
+        // 출력 : 60
+
+        System.out.println(a계산기.더하기(10.5, 20, 30));
+        // 출력 : 60.5
     }
 }
 
-class 사람 {
-    int 나이;
-
-    사람() {
-        System.out.println("사람이 태어났습니다.");
+class 계산기 {
+    int 더하기(int a, int b) {
+        return a + b;
     }
 
-    // 똑같은 이름의 메서드가 클래스 내에 여러개 존재하는 것 : 메서드 오버로딩
-    사람(int 나이) {
-        this.나이 = 나이;
-        System.out.println("태어나서부터 " + 나이 + "살인 사람이 태어났습니다.");
+    int 더하기(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    double 더하기(double a, int b, int c) {
+        return a + b + c;
     }
 }
