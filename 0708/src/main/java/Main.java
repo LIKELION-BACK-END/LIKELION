@@ -1,5 +1,5 @@
-//code.oa.gg/java8/948
-// 문제 : 아래 코드의 잘 못된 점을 고쳐보세요.
+//code.oa.gg/java8/949
+// 문제 : 아래 코드의 잘 못된 점을 고쳐보세요.[정답]
 
 class Main {
     public static void main(String[] args) {
@@ -22,12 +22,13 @@ class Main {
     }
 }
 
-// 원본폴더 == 본사 == 클래스
-// 사본폴더 == 대리점 == 객체
+// 본사직원은 오직 본사직원 끼리만 소통가능!!!
+// 대리점은, 본인대리점과, 본사까지 소통가능
 class 사람 {
-    int 나이;
-    String 이름;
+    int 나이; // 본사: 나대리
+    String 이름; // 본사: 이과장
 
+    // 대리점 : 자부장
     void 자기소개() {
         System.out.println("저는 " + 나이 + "살 " + 이름 + " 입니다.");
     }
