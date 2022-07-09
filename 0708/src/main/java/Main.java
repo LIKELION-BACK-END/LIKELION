@@ -32,5 +32,4 @@ class 사람 {
     void 자기소개() {
         System.out.println("저는 " + 나이 + "살 " + 이름 + " 입니다.");
     }
-
 }
