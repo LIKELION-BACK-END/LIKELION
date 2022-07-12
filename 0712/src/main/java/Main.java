@@ -1,84 +1,31 @@
-// 문제 : 아래와 같이 실행되게 해주세요.
+// 문제 : 사람 리모콘 3개 저장할 수 있는 배열을 만들고 사람 리모콘으로 채워주세요.
 
 class Main {
     public static void main(String[] args) {
-        IntArr intArr1 = new IntArr1();
-        System.out.println("배열의 길이 : " + intArr1.length);
-        // 출력 => 배열의 길이 : 1
-        intArr1.setData(0, 20);
-        System.out.println(intArr1.getData(0));
-        // 출력 => 20
 
-        IntArr intArr3 = new IntArr3();
-        System.out.println("배열의 길이 : " + intArr3.length);
-        // 출력 => 배열의 길이 : 3
-        intArr3.setData(0, 20);
-        intArr3.setData(1, 40);
-        intArr3.setData(2, 60);
-        System.out.println(intArr3.getData(0));
-        // 출력 => 20
-        System.out.println(intArr3.getData(1));
-        // 출력 => 40
-        System.out.println(intArr3.getData(2));
-        // 출력 => 60
+        사람 a사람;
+
+        사람[] 사람들;
+
+        사람들 = new 사람[3];
+
+        사람들[0] = new 사람(111);
+        사람들[1] = new 사람(222);
+        사람들[2] = new 사람(333);
+
+        for (int i = 0; i < 사람들.length; i++) {
+            사람들[i].자기소개();
+        }
     }
 }
 
-abstract class IntArr {
-    int length;
+class 사람 {
+    int 번호;
 
-    abstract void setData(int index, int value);
-    abstract int getData(int index);
-}
-
-class IntArr1 extends IntArr {
-    int data0;
-
-    IntArr1() {
-        length = 1;
+    사람(int 번호) {
+        this.번호 = 번호;
     }
-
-    void setData(int index, int value) {
-        this.data0 = value;
-    }
-
-    int getData(int index) {
-        return this.data0;
-    }
-}
-
-class IntArr3 extends IntArr {
-    int data0;
-    int data1;
-    int data2;
-
-    IntArr3() {
-        length = 3;
-    }
-
-    void setData(int index, int value) {
-        if ( index == 0 ) {
-            this.data0 = value;
-        }
-        else if ( index == 1 ) {
-            this.data1 = value;
-        }
-        else if ( index == 2 ) {
-            this.data2 = value;
-        }
-    }
-
-    int getData(int index) {
-        if ( index == 0 ) {
-            return this.data0;
-        }
-        else if ( index == 1 ) {
-            return this.data1;
-        }
-        else if ( index == 2 ) {
-            return this.data2;
-        }
-
-        return 0;
+    void 자기소개() {
+        System.out.println("안녕하세요. 저는 " + this.번호 + "번 입니다.");
     }
 }
