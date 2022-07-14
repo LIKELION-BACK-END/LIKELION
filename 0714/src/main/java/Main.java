@@ -9,7 +9,15 @@ class Main {
         ar.add(200);
         ar.add(300);
         ar.add(400);
-
+        ar.add(500);
+        ar.add(600);
+        ar.add(700);
+        ar.add(800);
+        ar.add(900);
+        ar.add(1000);
+        ar.add(1100);
+        ar.add(1200);
+        ar.add(1300);
         int value = ar.get(0);
         System.out.println(value);
         // 출력 : 100
@@ -37,25 +45,39 @@ class ArrayList {
     }
 
     void add(int data) {
+        sizeUpIfFull();
+
+        System.out.printf("데이터 %d 삽입됨\n", data);
+
         lastIndex++;
 
-        if (lastIndex + 1 > datas.length) {
-            // 확장공사
-            // 기존버스 버리고 새 버스로 연결!!
-            // datas 이 녀석이 기존 버스를 버리고 새 버스를 가리켜야 합니다.
+        datas[lastIndex] = data;
+    }
 
-            // 새 버스 생성
-            int[] newArr = new int[datas.length * 2];
+    void sizeUpIfFull() {
+        if ( isFull() ) {
+            sizeUp();
+        }
+    }
 
-            // 기존 버스(배열)를 버리기 전에 버스에 있던 승객들을 새 버스로 옮긴다.
-            for (int i = 0; i < datas.length; i++) {
-                newArr[i] = datas[i];
-            }
+    void sizeUp() {
+        // 1 : 2배 더 큰 배열객체를 만든다.
+        // 2 : 이사한다.
+        // 3 : datas 가 더 이상 기존 배열객체를 가리키지 않고 이번에 새로 만든 배열 객체를 가리킨다.
 
-            datas = newArr;
+        int[] newDatas = new int[datas.length * 2];
+
+        for ( int i = 0; i < datas.length; i++ ) {
+            newDatas[i] = datas[i];
         }
 
-        datas[lastIndex] = data;
+        System.out.printf("사이즈 업(%d => %d)\n", datas.length, newDatas.length);
+
+        datas = newDatas;
+    }
+
+    boolean isFull() {
+        return datas.length - 1 == lastIndex;
     }
 
     int get(int index) {
