@@ -3,6 +3,7 @@
 
 class Main {
     public static void main(String[] args) {
+
         오리 a청둥오리 = 오리공장.get("청둥");
         오리 a흰오리 = 오리공장.get("흰");
         오리 a고무오리 = 오리공장.get("고무");
