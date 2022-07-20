@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/0627" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/0720" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/LIKELION-TDD" vcs="Git" />
   </component>
 </project>
