@@ -3,7 +3,6 @@
 
 class Main {
     public static void main(String[] args) {
-
         사람 a사람1 = new 사람();
         a사람1.이름 = "홍길동";
         a사람1.나이 = 22;
