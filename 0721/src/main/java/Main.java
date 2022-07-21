@@ -4,6 +4,7 @@
 */
 class Main {
     public static void main(String[] args) {
+
         Button button = new Button();
         button.setListener(new 사람());
         button.setListener(new 코끼리());
