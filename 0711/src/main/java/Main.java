@@ -2,6 +2,7 @@
 
 class Main {
     public static void main(String[] args) {
+
         동물 a동물 = new 사람();
         a동물.말하다();
         Object o = a동물;
