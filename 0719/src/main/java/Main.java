@@ -4,6 +4,7 @@
 // 조건 : 사람 클래스의 id 필드의 private 속성은 수정할 수 없습니다.
 class Main {
     public static void main(String[] args) {
+
         사람 a사람 = new 사람();
         a사람.setId(20);
         System.out.println("제 번호는 " + a사람.getId() + " 입니다.");
