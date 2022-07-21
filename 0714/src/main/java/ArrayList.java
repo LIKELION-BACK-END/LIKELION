@@ -1,5 +1,4 @@
 public class ArrayList {
-
     private int size;
     private int[] datum;
 
