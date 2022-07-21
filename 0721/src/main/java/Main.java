@@ -3,6 +3,7 @@
 */
 class Main {
     public static void main(String[] args) {
+
         Main aMain = new Main();
 
         실행자 a실행자 = new 실행자();
