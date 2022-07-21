@@ -2,7 +2,6 @@
 
 class Main {
     public static void main(String[] args) {
-
         사람 a사람;
 
         사람[] 사람들;
