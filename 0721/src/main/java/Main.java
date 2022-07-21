@@ -1,43 +1,53 @@
-/*
-문제 : 사람 객체의 `안녕`이 `button.click();`에 의해 실행되도록 해주세요.
-조건 : Button에는 `사람` 이라는 언급이 없어야 합니다.
-*/
-class Main {
+public class Main {
     public static void main(String[] args) {
+        Button aButton = new Button();
+        aButton.setClickEventListener(new 고양이());
+        aButton.fireClick();
+        // 나(고양이)는 방금 버튼이 클릭되었다는 사실을 전달 받았습니다.
 
-        Button button = new Button();
-        button.setListener(new 사람());
-        button.setListener(new 코끼리());
-        button.click();
+        aButton.setClickEventListener(new 개());
+        aButton.fireClick();
+        // 나(개)는 방금 버튼이 클릭되었다는 사실을 전달 받았습니다.
+
+        aButton.setClickEventListener(new 부엉이());
+        // 나(부엉이)는 방금 버튼이 클릭되었다는 사실을 전달 받았습니다.
+
+        aButton.fireClick();
     }
 }
-
-interface Listener {
-    public void listen(String msg);
-}
-
 class Button {
-    private Listener aListener;
-    public void setListener(Listener aListener) {
+    private Object aListener;
+
+    public void setClickEventListener(Object aListener) {
         this.aListener = aListener;
     }
-    public void click() {
-        aListener.listen("버튼 클릭 되었네요.");
+
+    public void fireClick() {
+        if ( aListener instanceof 고양이 ) {
+            ((고양이)aListener).클릭이벤트에응답();
+        }
+        else if ( aListener instanceof 개 ) {
+            ((개)aListener).응답();
+        }
+        else if ( aListener instanceof 부엉이 ) {
+            ((부엉이)aListener).onClick();
+        }
+    }
+}
+class 고양이 {
+    public void 클릭이벤트에응답() {
+        System.out.println("나(고양이)는 방금 버튼이 클릭되었다는 사실을 전달 받았습니다.");
     }
 }
 
-class 사람 implements Listener {
-    @Override
-    public void listen(String msg) {
-        안녕();
-    }
-    public void 안녕() {
-        System.out.println("사람, 안녕!");
+class 개 {
+    public void 응답() {
+        System.out.println("나(개)는 방금 버튼이 클릭되었다는 사실을 전달 받았습니다.");
     }
 }
 
-class 코끼리 implements Listener {
-    public void listen(String msg) {
-        System.out.println("꼬끼리가 버튼이 클릭되었다는 소식을 받았습니다,\n메세지 : " + msg);
+class 부엉이 {
+    public void onClick() {
+        System.out.println("나(부엉이)는 방금 버튼이 클릭되었다는 사실을 전달 받았습니다.");
     }
 }
