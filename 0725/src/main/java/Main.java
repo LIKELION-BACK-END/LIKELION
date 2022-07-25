@@ -5,13 +5,16 @@ class Main {
         a계산기.num2 = 20;
 
         int 결과1 = a계산기.수행((num1, num2) -> num1 + num2);
-        System.out.println(결과1); // 30
+        System.out.println("결과1: " + 결과1); // 30
 
         int 결과2 = a계산기.수행(((num1, num2) -> num1 - num2));
-        System.out.println(결과2); // -10
+        System.out.println("결과2: " + 결과2); // -10
 
         int 결과3 = a계산기.수행(((num1, num2) -> num1 * num2));
-        System.out.println(결과3); // 300
+        System.out.println("결과3: " + 결과3); // 300
+
+        int result4 = a계산기.수행((num1, num2) -> num1 / num2);
+        System.out.println("결과4: " + result4);
     }
 }
 class 계산기 {
